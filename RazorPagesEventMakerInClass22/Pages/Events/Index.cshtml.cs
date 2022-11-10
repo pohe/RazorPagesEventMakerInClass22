@@ -16,6 +16,7 @@ namespace RazorPagesEventMakerInClass22.Pages.Events
 
         public void OnGet()
         {
+            Events = _repository.GetAllEvents();
         }
     }
 }
