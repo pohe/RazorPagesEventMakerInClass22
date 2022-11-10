@@ -1,4 +1,5 @@
 ﻿@page
+@using RazorPagesEventMakerInClass22.Models
 @model RazorPagesEventMakerInClass22.Pages.Events.IndexModel
 @{
     ViewData["Title"] = "Event oversigt";
@@ -15,18 +16,32 @@
             <th>DateTime</th>
         </tr>
     </thead>
-    <tbody>
-        @for (int i = 0; i < 5; i++)
+    @*<tbody>
+        <h3>For loop</h3>
+        @for (int i = 0; i < Model.Events.Count; i++)
         {
             <tr>
-                <td>@i id</td>
-                <td>@i Name</td>
-                <td>@i Description</td>
-                <td>@i Place</td>
-                <td>@i Datetime</td>
+                <td>@Model.Events[i].Id</td>
+                <td>@Model.Events[i].Name</td>
+                <td>@Model.Events[i].Description</td>
+                <td>@Model.Events[i].City</td>
+                <td>@Model.Events[i].DateTime</td>
             </tr>
-
         }
+              
 
+    </tbody>*@
+    <tbody>
+        <h3>Foreach loop</h3>
+        @foreach (Event item in Model.Events)
+        {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.Name</td>
+                <td>@item.Description</td>
+                <td>@item.City</td>
+                <td>@item.DateTime</td>
+            </tr>
+        }
     </tbody>
 </table>
