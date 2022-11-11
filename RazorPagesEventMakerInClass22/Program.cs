@@ -1,7 +1,11 @@
+using RazorPagesEventMakerInClass22.Interfaces;
+using RazorPagesEventMakerInClass22.Models;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
+builder.Services.AddSingleton<IRepository,FakeEventRepository>();
 
 var app = builder.Build();
 

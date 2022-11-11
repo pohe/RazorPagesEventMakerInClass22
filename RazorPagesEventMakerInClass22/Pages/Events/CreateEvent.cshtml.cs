@@ -1,27 +1,30 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using RazorPagesEventMakerInClass22.Interfaces;
 using RazorPagesEventMakerInClass22.Models;
 
 namespace RazorPagesEventMakerInClass22.Pages.Events
 {
     public class CreateEventModel : PageModel
     {
-        private FakeEventRepository repo;
+        private IRepository repo;
 
         [BindProperty]
         public Event Event{ get; set; }
 
-        public CreateEventModel()
+        public CreateEventModel(IRepository fakeEventRepository)
         {
-            repo = new FakeEventRepository();
+            repo = fakeEventRepository;
         }
-        public void OnGet()
+        public IActionResult OnGet()
         {
+            return Page();
         }
 
-        public void OnPost()
+        public IActionResult OnPost()
         {
-            repo.Add(Event);
+            repo.AddEvent(Event);
+            return RedirectToPage("Index");
         }
     }
 }

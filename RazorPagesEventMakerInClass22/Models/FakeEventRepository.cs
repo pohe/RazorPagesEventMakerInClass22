@@ -1,6 +1,8 @@
-﻿namespace RazorPagesEventMakerInClass22.Models
+﻿using RazorPagesEventMakerInClass22.Interfaces;
+
+namespace RazorPagesEventMakerInClass22.Models
 {
-    public class FakeEventRepository
+    public class FakeEventRepository : IRepository
     {
         private List<Event> events { get; }
 
@@ -54,9 +56,19 @@
             return events.ToList();
         }
 
-        public void Add(Event aEvent)
+        public void AddEvent(Event aEvent)
         {
             events.Add(aEvent);
+        }
+
+        public Event GetEvent(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void UpdateEvent()
+        {
+            throw new NotImplementedException();
         }
     }
 }
