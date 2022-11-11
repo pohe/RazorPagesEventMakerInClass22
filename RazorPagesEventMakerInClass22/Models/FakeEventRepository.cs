@@ -53,5 +53,10 @@
         {
             return events.ToList();
         }
+
+        public void Add(Event aEvent)
+        {
+            events.Add(aEvent);
+        }
     }
 }
