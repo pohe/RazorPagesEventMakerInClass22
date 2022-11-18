@@ -77,12 +77,33 @@ namespace RazorPagesEventMakerInClass22.Models
 
         public Event GetEvent(int id)
         {
-            throw new NotImplementedException();
+            foreach(Event aEvent in events)
+            {
+                if (aEvent.Id == id)
+                {
+                    return aEvent;
+                }
+            }
+            return new Event();
         }
 
-        public void UpdateEvent()
+        public void UpdateEvent(Event ev)
         {
-            throw new NotImplementedException();
+            if (ev != null)
+            {
+                foreach(Event e in events)
+                {
+                    if (e.Id == ev.Id)
+                    {
+                        e.Id= ev.Id;
+                        e.Name=ev.Name;
+                        e.Description = ev.Description;
+                        e.City = ev.City;
+                        e.DateTime = ev.DateTime;
+
+                    }
+                }
+            }
         }
     }
 }

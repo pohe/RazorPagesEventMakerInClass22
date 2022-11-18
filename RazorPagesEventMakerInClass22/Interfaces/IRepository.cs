@@ -10,6 +10,6 @@ namespace RazorPagesEventMakerInClass22.Interfaces
 
         void AddEvent(Event ev);
 
-        void UpdateEvent();
+        void UpdateEvent(Event ev);
     }
 }
