@@ -1,20 +1,16 @@
 ﻿@page
-@model RazorPagesEventMakerInClass22.Pages.Events.CreateEventModel
+@model RazorPagesEventMakerInClass22.Pages.Events.EditEventModel
 @{
-    ViewData["Title"] = "Create Event";
+    ViewData["Title"] = "Edit event";
 }
-<h1>Create event</h1>
+<h1>Edit event</h1>
 <div class="row">
     <div class="col-md-4">
         <form method="post">
-            <div class="form-group">
-                <label asp-for="@Model.Event.Id" class="control-label"></label>
-                <input asp-for="@Model.Event.Id" class="control-label" />
-                <span asp-validation-for="Event.Id" class="text-danger"></span>
-            </div>
+            
             <div class="form-group">
                 <label asp-for="@Model.Event.Name" class="control-label"></label>
-                <input asp-for="@Model.Event.Name" class="control-label"/>
+                <input asp-for="@Model.Event.Name" class="control-label" />
                 <span asp-validation-for="Event.Name" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -32,7 +28,7 @@
                 <span asp-validation-for="Event.DateTime" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Create a new event" class="btn btn-primary" />
+                <input type="submit" value="Save updated event" class="btn btn-primary" />
             </div>
         </form>
     </div>

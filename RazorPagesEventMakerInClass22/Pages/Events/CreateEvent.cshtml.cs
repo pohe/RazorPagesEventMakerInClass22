@@ -23,6 +23,10 @@ namespace RazorPagesEventMakerInClass22.Pages.Events
 
         public IActionResult OnPost()
         {
+            if (!ModelState.IsValid)
+            {
+                return Page(); 
+            }
             repo.AddEvent(Event);
             return RedirectToPage("Index");
         }

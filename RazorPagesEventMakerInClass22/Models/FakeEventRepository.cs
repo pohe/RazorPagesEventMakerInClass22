@@ -58,6 +58,20 @@ namespace RazorPagesEventMakerInClass22.Models
 
         public void AddEvent(Event aEvent)
         {
+            //List<int> eventIds = new List<int>();
+            //foreach(var evt in events)
+            //{
+            //    eventIds.Add(evt.Id);
+            //}
+            //if (eventIds.Count!=0)
+            //{
+            //    int start = eventIds.Max();
+            //    aEvent.Id = start + 1; 
+            //}
+            //else
+            //{
+            //    aEvent.Id = 1;
+            //}
             events.Add(aEvent);
         }
 
