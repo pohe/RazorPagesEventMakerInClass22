@@ -1,6 +1,7 @@
 ﻿using RazorPagesEventMakerInClass22.Interfaces;
+using RazorPagesEventMakerInClass22.Models;
 
-namespace RazorPagesEventMakerInClass22.Models
+namespace RazorPagesEventMakerInClass22.Services
 {
     public class FakeEventRepository : IRepository
     {
@@ -77,7 +78,7 @@ namespace RazorPagesEventMakerInClass22.Models
 
         public Event GetEvent(int id)
         {
-            foreach(Event aEvent in events)
+            foreach (Event aEvent in events)
             {
                 if (aEvent.Id == id)
                 {
@@ -91,12 +92,12 @@ namespace RazorPagesEventMakerInClass22.Models
         {
             if (ev != null)
             {
-                foreach(Event e in events)
+                foreach (Event e in events)
                 {
                     if (e.Id == ev.Id)
                     {
-                        e.Id= ev.Id;
-                        e.Name=ev.Name;
+                        e.Id = ev.Id;
+                        e.Name = ev.Name;
                         e.Description = ev.Description;
                         e.City = ev.City;
                         e.DateTime = ev.DateTime;
@@ -104,6 +105,25 @@ namespace RazorPagesEventMakerInClass22.Models
                     }
                 }
             }
+        }
+
+        public void DeleteEvent(int id)
+        {
+            Event eventToDelete = GetEvent(id);
+            events.Remove(eventToDelete);
+        }
+
+        public List<Event> FilterEvents(string filter)
+        {
+            List<Event> filteredList = new List<Event>();
+            foreach (var item in events)
+            {
+                if ( item.City.Contains(filter) || item.Name.Contains(filter) || item.Description.Contains(filter))
+                {
+                    filteredList.Add(item);
+                }
+            }
+            return filteredList;    
         }
     }
 }

@@ -11,5 +11,9 @@ namespace RazorPagesEventMakerInClass22.Interfaces
         void AddEvent(Event ev);
 
         void UpdateEvent(Event ev);
+
+        void DeleteEvent(int id);
+
+        List<Event> FilterEvents(string filter);
     }
 }

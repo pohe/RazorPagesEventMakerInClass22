@@ -1,6 +1,7 @@
 ﻿using RazorPagesEventMakerInClass22.Interfaces;
+using RazorPagesEventMakerInClass22.Models;
 
-namespace RazorPagesEventMakerInClass22.Models
+namespace RazorPagesEventMakerInClass22.Services
 {
     public class HotelRepository : IHotelRepository
     {
@@ -8,7 +9,7 @@ namespace RazorPagesEventMakerInClass22.Models
         public HotelRepository()
         {
             _hotels = new List<Hotel>();
-            Hotel h1=   new Hotel(1, "City Hotel", "street 123");
+            Hotel h1 = new Hotel(1, "City Hotel", "street 123");
             Hotel h2 = new Hotel(2, "Scandic Roskilde", "Maglegårdsvej 1");
             _hotels.Add(h1);
             _hotels.Add(h2);

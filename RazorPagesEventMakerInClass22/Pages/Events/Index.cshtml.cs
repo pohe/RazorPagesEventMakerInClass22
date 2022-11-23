@@ -9,6 +9,8 @@ namespace RazorPagesEventMakerInClass22.Pages.Events
     {
         private IRepository _repository;
 
+        [BindProperty]
+        public string FilterCriteria { get; set; }
         public List<Event> Events { get; private set; }
         public IndexModel(IRepository fakeEventRepository)
         {
@@ -18,6 +20,14 @@ namespace RazorPagesEventMakerInClass22.Pages.Events
         public void OnGet()
         {
             Events = _repository.GetAllEvents();
+        }
+
+        public void OnPost()
+        {
+            if (FilterCriteria != null)
+                Events = _repository.FilterEvents(FilterCriteria);
+            else
+                Events = _repository.GetAllEvents();
         }
     }
 }

@@ -1,4 +1,18 @@
 ﻿@page
 @model RazorPagesEventMakerInClass22.Pages.Events.DeleteEventModel
 @{
+    ViewData["Titel"] = "Delete Event";
 }
+
+<h1>Delete event</h1>
+<p>
+    <h2>Vil du slette denne event?</h2>
+    <h3>ID @Model.Event.Id</h3>
+    <h3>Name @Model.Event.Name</h3>
+    <form method="post">
+        <input asp-for="@Model.Event.Id"  type="hidden"/>
+        <input type="submit" value="Delete" />
+        <a asp-page="Index">Cancel</a>
+    </form>
+</p>
+

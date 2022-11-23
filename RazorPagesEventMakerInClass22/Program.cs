@@ -1,5 +1,5 @@
 using RazorPagesEventMakerInClass22.Interfaces;
-using RazorPagesEventMakerInClass22.Models;
+using RazorPagesEventMakerInClass22.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
