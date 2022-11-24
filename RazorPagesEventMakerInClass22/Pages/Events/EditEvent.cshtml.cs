@@ -32,14 +32,14 @@ namespace RazorPagesEventMakerInClass22.Pages.Events
             return RedirectToPage("Index");
         }
 
-        //public IActionResult OnPostDelete()
-        //{
-        //    //if (!ModelState.IsValid)
-        //    //{
-        //    //    return Page();
-        //    //}
-        //    repo.DeleteEvent(Event.Id);
-        //    return RedirectToPage("Index");
-        //}
+        public IActionResult OnPostDelete()
+        {
+            //if (!ModelState.IsValid)
+            //{
+            //    return Page();
+            //}
+            repo.DeleteEvent(Event.Id);
+            return RedirectToPage("Index");
+        }
     }
 }

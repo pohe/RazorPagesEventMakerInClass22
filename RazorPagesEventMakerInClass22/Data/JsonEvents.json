@@ -7,13 +7,6 @@
     "DateTime": "2021-03-22T00:00:00"
   },
   {
-    "Id": 2,
-    "Name": "CPH Marathon",
-    "Description": " Runners from other           countries",
-    "City": "Copenhagen",
-    "DateTime": "2020-10-25T08:55:00"
-  },
-  {
     "Id": 3,
     "Name": "BAdminton",
     "Description": " Players from other           countries",
