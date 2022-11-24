@@ -18,7 +18,10 @@ namespace RazorPagesEventMakerInClass22.Services
 
         public void DeleteEvent(int id)
         {
-            throw new NotImplementedException();
+            Event eventToDelete = GetEvent(id);
+            List<Event> events = GetAllEvents();
+            events.Remove(eventToDelete);
+            JsonFileWriter.WritetoJson(events, jsonFileName);
         }
 
         public List<Event> FilterEvents(string filter)

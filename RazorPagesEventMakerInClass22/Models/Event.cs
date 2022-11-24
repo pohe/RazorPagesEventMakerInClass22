@@ -18,7 +18,21 @@ namespace RazorPagesEventMakerInClass22.Models
         public string City { get; set; }
 
         [Required]
-        [Range(typeof(DateTime), "18/11/2022", "18/11/2023" , ErrorMessage ="Datoen er uden for intervallet")]
+        [Range(typeof(DateTime), "18/11/2022", "18/11/2023", ErrorMessage = "Datoen er uden for intervallet")]
         public DateTime DateTime { get; set; }
+
+        public override bool Equals(object? obj)
+        { 
+            if (obj == null)
+                return false;
+            else
+            {
+                Event other = (Event) obj;
+                if (other.Id == Id)
+                    return true;
+                else
+                    return false;
+            }
+        }
     }
 }
