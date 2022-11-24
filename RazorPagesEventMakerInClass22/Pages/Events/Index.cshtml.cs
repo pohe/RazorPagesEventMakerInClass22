@@ -12,9 +12,9 @@ namespace RazorPagesEventMakerInClass22.Pages.Events
         [BindProperty]
         public string FilterCriteria { get; set; }
         public List<Event> Events { get; private set; }
-        public IndexModel(IRepository fakeEventRepository)
+        public IndexModel(IRepository repo)
         {
-            _repository = fakeEventRepository;
+            _repository = repo;
         }
 
         public void OnGet()

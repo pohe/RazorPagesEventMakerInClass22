@@ -1,6 +1,9 @@
 ﻿@page
-@using RazorPagesEventMakerInClass22.Models
 @model RazorPagesEventMakerInClass22.Pages.Events.IndexModel
+@using RazorPagesEventMakerInClass22.Models
+@using RazorPagesEventMakerInClass22.Interfaces
+@inject IRepository repo
+@inject IHotelRepository hotelRepo
 @{
     ViewData["Title"] = "Event oversigt";
 }
@@ -15,7 +18,8 @@
 
 </form>
 <a  asp-page="CreateEvent" >Create a new Event</a>
-
+<p>Antal events @repo.GetAllEvents().Count</p>
+<p>Antal hoteller @hotelRepo.GetAllHotels().Count</p>
 <table class="table">
     <thead>
         <tr>

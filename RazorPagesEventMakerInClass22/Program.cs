@@ -5,7 +5,8 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
-builder.Services.AddSingleton<IRepository,FakeEventRepository>();
+//builder.Services.AddSingleton<IRepository, FakeEventRepository>();
+builder.Services.AddTransient<IRepository, JsonEventRepository>();
 builder.Services.AddSingleton<IHotelRepository, HotelRepository>();
 
 var app = builder.Build();

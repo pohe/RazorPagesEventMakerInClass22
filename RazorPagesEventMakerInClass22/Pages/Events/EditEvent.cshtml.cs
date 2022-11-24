@@ -24,12 +24,22 @@ namespace RazorPagesEventMakerInClass22.Pages.Events
 
         public IActionResult OnPost()
         {
-            if (!ModelState.IsValid)
-            {
-                return Page();
-            }
+            //if (!ModelState.IsValid)
+            //{
+            //    return Page();
+            //}
             repo.UpdateEvent(Event);
             return RedirectToPage("Index");
         }
+
+        //public IActionResult OnPostDelete()
+        //{
+        //    //if (!ModelState.IsValid)
+        //    //{
+        //    //    return Page();
+        //    //}
+        //    repo.DeleteEvent(Event.Id);
+        //    return RedirectToPage("Index");
+        //}
     }
 }
