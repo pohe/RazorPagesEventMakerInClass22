@@ -1,0 +1,31 @@
+﻿@page
+@using RazorPagesEventMakerInClass22.Models
+@model RazorPagesEventMakerInClass22.Pages.Countries.CountryIndexModel
+@{
+    ViewData["Title"] = "Lande-oversigt";
+}
+
+<h1>Landeoversigt</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>CountryCode</th>
+            <th>Name</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Country item in Model.Countries)
+        {
+            <tr>
+                <td>@item.Code</td>
+                <td>@item.Name</td>
+                <td>
+                    <a asp-page="CountryEvents" asp-route-code=@item.Code>CountryEvents</a>|
+                    <a asp-page="EditCountry" asp-route-id=@item.Code>Edit</a>|
+                    <a asp-page="DeleteCountry" asp-route-id=@item.Code>Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

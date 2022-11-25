@@ -8,6 +8,8 @@ builder.Services.AddRazorPages();
 //builder.Services.AddSingleton<IRepository, FakeEventRepository>();
 builder.Services.AddTransient<IRepository, JsonEventRepository>();
 builder.Services.AddSingleton<IHotelRepository, HotelRepository>();
+builder.Services.AddTransient<ICountryRepository, JsonCountryRepository>();
+
 
 var app = builder.Build();
 

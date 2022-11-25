@@ -1,0 +1,43 @@
+﻿@page
+@model RazorPagesEventMakerInClass22.Pages.Countries.CountryEventsModel
+@using RazorPagesEventMakerInClass22.Interfaces
+@using RazorPagesEventMakerInClass22.Models
+@inject IRepository repo
+@{
+    ViewData["Title"] = "Country Events";
+}
+
+<h1>Events in the country @Model.Country.Name</h1>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Place</th>
+            <th>DateTime</th>
+        </tr>
+    </thead>
+    <tbody>
+
+        @foreach (Event item in repo.GetAllEventsByCode(Model.Country.Code))
+        {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.Name</td>
+                <td>@item.Description</td>
+                <td>@item.City</td>
+                <td>@item.DateTime</td>
+                <td>
+                    <a asp-page="EditEvent" asp-route-id=@item.Id>Edit</a>|
+                    <a asp-page="DeleteEvent" asp-route-id=@item.Id>Delete</a>
+                </td>
+            </tr>
+
+
+
+        }
+    </tbody>
+</table>

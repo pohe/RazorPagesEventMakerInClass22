@@ -1,16 +1,18 @@
 [
   {
-    "Id": 1,
-    "Name": "Roskilde Festival",
-    "Description": " A lot of music ",
-    "City": "Roskilde",
-    "DateTime": "2021-03-22T00:00:00"
+    "Id": 3,
+    "Name": "Badminton",
+    "Description": " Players from other           countries",
+    "CountryCode": "DK",
+    "City": "Copenhagen",
+    "DateTime": "2022-11-25T08:55:00"
   },
   {
-    "Id": 3,
-    "Name": "BAdminton",
-    "Description": " Players from other           countries",
-    "City": "Copenhagen",
+    "Id": 4,
+    "Name": "Skak",
+    "Description": " Players from othercountries",
+    "CountryCode": "UG",
+    "City": "Kampala",
     "DateTime": "2022-11-25T08:55:00"
   }
 ]

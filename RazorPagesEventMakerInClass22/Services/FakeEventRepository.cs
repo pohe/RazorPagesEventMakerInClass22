@@ -125,5 +125,10 @@ namespace RazorPagesEventMakerInClass22.Services
             }
             return filteredList;    
         }
+
+        public List<Event> GetAllEventsByCode(string code)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

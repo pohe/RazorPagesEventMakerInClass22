@@ -42,6 +42,18 @@ namespace RazorPagesEventMakerInClass22.Services
             return JsonFileReader.ReadJson(jsonFileName);
         }
 
+        public List<Event> GetAllEventsByCode(string code)
+        {
+            List<Event> conEvents = new List<Event>();
+            List<Event> events = GetAllEvents();
+            foreach (Event item in events)
+            {
+                if (item.CountryCode == code)
+                    conEvents.Add(item);
+            }
+            return conEvents;
+        }
+
         public Event GetEvent(int id)
         {
             List<Event> events = GetAllEvents();

@@ -13,6 +13,10 @@ namespace RazorPagesEventMakerInClass22.Models
 
         public string Description { get; set; }
 
+
+        public string CountryCode { get; set; }
+
+
         [Required]
         [StringLength(18,ErrorMessage ="City kan ikke være længere end 18 karakter lang")]
         public string City { get; set; }

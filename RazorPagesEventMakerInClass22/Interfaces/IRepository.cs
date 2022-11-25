@@ -1,5 +1,6 @@
 ﻿using RazorPagesEventMakerInClass22.Models;
 using System.ComponentModel;
+using System.Reflection;
 
 namespace RazorPagesEventMakerInClass22.Interfaces
 {
@@ -15,5 +16,6 @@ namespace RazorPagesEventMakerInClass22.Interfaces
         void DeleteEvent(int id);
 
         List<Event> FilterEvents(string filter);
+        List<Event> GetAllEventsByCode(string code);
     }
 }

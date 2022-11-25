@@ -3,6 +3,7 @@
 @using RazorPagesEventMakerInClass22.Models
 @using RazorPagesEventMakerInClass22.Interfaces
 @inject IRepository repo
+@inject ICountryRepository contryRepo
 @inject IHotelRepository hotelRepo
 @{
     ViewData["Title"] = "Event oversigt";
@@ -26,25 +27,11 @@
             <th>Id</th>
             <th>Name</th>
             <th>Description</th>
+            <th>Country</th>
             <th>Place</th>
             <th>DateTime</th>
         </tr>
     </thead>
-    @*<tbody>
-        <h3>For loop</h3>
-        @for (int i = 0; i < Model.Events.Count; i++)
-        {
-            <tr>
-                <td>@Model.Events[i].Id</td>
-                <td>@Model.Events[i].Name</td>
-                <td>@Model.Events[i].Description</td>
-                <td>@Model.Events[i].City</td>
-                <td>@Model.Events[i].DateTime</td>
-            </tr>
-        }
-              
-
-    </tbody>*@
     <tbody>
         
         @foreach (Event item in Model.Events)
@@ -53,6 +40,7 @@
                 <td>@item.Id</td>
                 <td>@item.Name</td>
                 <td>@item.Description</td>
+                <td>@contryRepo.GetCountry( item.CountryCode ).Name </td>
                 <td>@item.City</td>
                 <td>@item.DateTime</td>
                 <td><a asp-page="EditEvent" asp-route-id=@item.Id>Edit</a>| 
